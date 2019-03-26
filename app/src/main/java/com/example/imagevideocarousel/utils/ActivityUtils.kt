@@ -20,4 +20,10 @@ object ActivityUtils {
         }
         transaction.commitAllowingStateLoss()
     }
+
+    fun getFragmentInActivity(activity: FragmentActivity): Fragment? {
+        val fragmentManager = activity.supportFragmentManager
+        return fragmentManager.findFragmentById(R.id.fragmentContainer)
+    }
+
 }
