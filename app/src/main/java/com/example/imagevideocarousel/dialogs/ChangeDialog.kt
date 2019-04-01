@@ -1,19 +1,21 @@
-package com.example.imagevideocarousel
+package com.example.imagevideocarousel.dialogs
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import com.example.imagevideocarousel.R
 import com.example.imagevideocarousel.interfaces.AmountChangeListener
+import com.example.imagevideocarousel.utils.Constants
 import kotlinx.android.synthetic.main.dialog_change.*
 
 
 class ChangeDialog : DialogFragment() {
 
-    var amountValue: Int = 0
-    var amountChangeListener: AmountChangeListener? = null
-    var contentView: View? = null
+    private var amountChangeListener: AmountChangeListener? = null
+    private var contentView: View? = null
 
 
     override fun onStart() {
@@ -35,8 +37,14 @@ class ChangeDialog : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         header.text = arguments?.getString(HEADER_TEXT)
         confirmButton.setOnClickListener {
-            amountChangeListener?.onChanged(changeInputLayout.editText?.text.toString().toInt())
-            this@ChangeDialog.dismiss()
+            amountChangeListener?.onIntervalChanged(changeInputLayout.editText?.text.toString().toInt())
+            if (changeInputLayout.editText?.text.toString().toInt() > Constants.maxTime
+                || changeInputLayout.editText?.text.toString().toInt() < Constants.minTime
+            ) {
+                header.setTextColor(ContextCompat.getColor(header.context, R.color.redColor))
+            } else {
+                this@ChangeDialog.dismiss()
+            }
         }
     }
 
@@ -48,10 +56,10 @@ class ChangeDialog : DialogFragment() {
         val HEADER_TEXT = "HEADER_TEXT"
         val AMOUNT_VALUE = "AMOUNT_VALUE"
 
-        fun newInstance(headerText: String, amountValue: Int): ChangeDialog {
+        fun newInstance(headerText: String, amountValue: Long): ChangeDialog {
             val bundle = Bundle(2)
             bundle.putString(HEADER_TEXT, headerText)
-            bundle.putInt(AMOUNT_VALUE, amountValue)
+            bundle.putLong(AMOUNT_VALUE, amountValue)
             val dialog = ChangeDialog()
             dialog.arguments = bundle
             return dialog

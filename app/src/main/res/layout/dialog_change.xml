@@ -13,13 +13,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header"
-            app:layout_constraintVertical_bias="0.0">
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:inputType="number"
@@ -29,23 +27,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
+            android:textSize="20sp"
+            android:gravity="center"
             android:id="@+id/header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dialog_header"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp" android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/changeInputLayout"
+            app:layout_constraintVertical_bias="0.029999971"/>
 
     <Button
             android:id="@+id/confirmButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:text="@string/dialog_confirm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/changeInputLayout"/>
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/changeInputLayout"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

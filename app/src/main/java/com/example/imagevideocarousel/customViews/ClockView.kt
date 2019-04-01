@@ -53,7 +53,7 @@ class ClockView : View {
             initClock()
         }
 
-        canvas.drawColor(Color.BLACK)
+        canvas.drawColor(Color.WHITE)
         drawCircle(canvas)
         drawCenter(canvas)
         drawNumeral(canvas)
@@ -103,7 +103,7 @@ class ClockView : View {
 
     private fun drawCircle(canvas: Canvas) {
         paint!!.reset()
-        paint!!.color = resources.getColor(android.R.color.white)
+        paint!!.color = Color.BLACK
         paint!!.strokeWidth = 5F
         paint!!.style = Paint.Style.STROKE
         paint!!.isAntiAlias = true

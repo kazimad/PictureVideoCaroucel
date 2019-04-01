@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">ImageVideoCarousel</string>
     <string name="dialog_confirm">Confirm</string>
-    <string name="dialog_header">header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="dialog_header">Change picture show interval, now it is %s seconds. You can choose in amount of %s – %s seconds
+    </string>
+
+    <string name="error_no_pics">No pics</string>
+    <string name="error_need_permission">We need READ_EXTERNAL_STORAGE permission</string>
 </resources>
