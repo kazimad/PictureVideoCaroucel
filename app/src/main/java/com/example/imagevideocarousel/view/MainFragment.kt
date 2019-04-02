@@ -21,7 +21,7 @@ import com.example.imagevideocarousel.interfaces.AmountChangeListener
 import com.example.imagevideocarousel.interfaces.MainFragmentInterface
 import com.example.imagevideocarousel.utils.ActivityUtils
 import com.example.imagevideocarousel.utils.Constants
-import com.kazimad.movieparser.utils.glide.Glider
+import com.example.imagevideocarousel.utils.glide.Glider
 import kotlinx.android.synthetic.main.fragment_main.*
 import java.io.File
 

@@ -1,4 +1,4 @@
-package com.kazimad.movieparser.utils.glide
+package com.example.imagevideocarousel.utils.glide
 
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule
